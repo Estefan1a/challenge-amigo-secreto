@@ -19,9 +19,6 @@ Este proyecto permite organizar un juego de Amigo Secreto de manera sencilla y d
 2. Agrega los nombres de los participantes en el campo correspondiente.
 3. Haz clic en el botón "Realizar Sorteo" para ver quién es el amigo secreto de cada uno.
 
-## Capturas de Pantalla
-
-
 ## Problemas Comunes
 Si no se muestran los resultados, asegúrate de que todos los nombres estén correctamente ingresados.
 Verifica que no haya nombres duplicados.

@@ -1,11 +1,14 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+   
+    --color-primary: #151515;
+    --color-secondary: #EEEEEE;
+    --color-tertiary: #C73659;
+    --color-button: #A91D3A;
+    --color-button-hover: #EB455F;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-names: #A91D3A;
+    --color-boton-disabled: #FF8FB1;
 }
 
 /* Estilos generales */
@@ -21,6 +24,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(./assets/carnaval.jpg);
+
 }
 
 .main-content {
@@ -37,12 +42,13 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
+
 }
 
 /* Sección de entrada */
 .input-section {
     flex: 60%;
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     border: 1px solid #000;
     border-radius: 64px 64px 0 0;
     display: flex;
@@ -58,7 +64,7 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
-    color: var(--color-white);
+    color: var(--color-primary);
 }
 
 .section-title {
@@ -90,6 +96,8 @@ body {
 .button-container {
     width: 300px;
     justify-content: center;
+    display: flex;
+    gap: 10px;
 }
 
 /* Estilos de entrada de texto */
@@ -116,27 +124,70 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
+    background-color: var(--color-button-hover);
+    color: var(--color-primary);
     border-radius: 0 25px 25px 0;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
 }
 
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-text);
+    color: var(--color-primary);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
 }
 
+.name-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.name-list li {
+    background-color: var(--color-names);
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 10%;
+    border: 2px solid var(--color-primary);
+    color: var(--color-secondary);
+   
+    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+}
+
+.name-list li:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el mouse */
+    transition: transform 0.2s ease;
+}
+
+/* Estilo para el botón de eliminar */
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 2px 5px; /* Reduce el tamaño del botón */
+    border-radius: 30px; /* Hace que los bordes del botón sean redondeados */
+}
+
+.btn-eliminar:hover {
+    color: darkred;
+    background-color: var(--color-button-hover); 
+}
+
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: var(--color-primary);
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -150,13 +201,31 @@ ul {
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
-    font-size: 16px;
+    font-size: 16px; 
+    justify-content: center;
 }
 
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 10px;
+    width: 24px;  /* Ajusta el ancho */
+    height: 24px; /* Ajusta la altura */
 }
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+button.button-draw:disabled {
+    background-color: var(--color-boton-disabled); /* Gris claro */
+    color: var(--color-primary); /* Gris oscuro */
+    cursor: not-allowed; /* Cambia el cursor a un símbolo de "no permitido" */
+    opacity: 0.6; /* Baja la opacidad para hacerlo ver más desactivado */
+}
+
+
+
+@keyframes saltar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
